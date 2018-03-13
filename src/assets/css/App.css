@@ -29,7 +29,24 @@
           margin: 0 auto;
           background: #9ead86;
           padding: 8px;
-          border: 2px solid #494536; }
+          border: 2px solid #494536;
+          position: relative; }
+          #root .App .gameDisplay .displayBoarder .screen .gameInfo {
+            width: 108px;
+            position: absolute;
+            top: 0;
+            right: 15px; }
+            #root .App .gameDisplay .displayBoarder .screen .gameInfo .settingWrapper {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 40px; }
+              #root .App .gameDisplay .displayBoarder .screen .gameInfo .settingWrapper .setting {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center; }
     #root .App .operation {
       width: 580px;
       height: 330px;

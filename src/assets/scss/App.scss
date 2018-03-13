@@ -30,6 +30,26 @@
           background: #9ead86;
           padding: 8px;
           border: 2px solid #494536;
+          position: relative;
+          .gameInfo {
+            width: 108px;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            .settingWrapper {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 40px;
+              .setting {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center
+              }
+            }
+          }
         }
        }
     };

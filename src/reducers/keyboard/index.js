@@ -15,21 +15,21 @@ const $initState = immutable.Map({
 const keyboard = (state = $initState, action) => {
   switch (action.type) {
     case actions.KEY_UP:
-      return state.set(actions.KEY_UP, !state.get(actions.KEY_UP))
+      return state.set(actions.KEY_UP, action.payload)
     case actions.KEY_LEFT:
-      return state.set(actions.KEY_LEFT, !state.get(actions.KEY_LEFT))
+      return state.set(actions.KEY_LEFT, action.payload)
     case actions.KEY_RIGHT:
-      return state.set(actions.KEY_RIGHT, !state.get(actions.KEY_RIGHT))
+      return state.set(actions.KEY_RIGHT, action.payload)
     case actions.KEY_DOWN:
-      return state.set(actions.KEY_DOWN, !state.get(actions.KEY_DOWN))
+      return state.set(actions.KEY_DOWN, action.payload)
     case actions.KEY_PAUSE:
-      return state.set(actions.KEY_PAUSE, !state.get(actions.KEY_PAUSE))
+      return state.set(actions.KEY_PAUSE, action.payload)
     case actions.KEY_MUSIC:
-      return state.set(actions.KEY_MUSIC, !state.get(actions.KEY_MUSIC))
+      return state.set(actions.KEY_MUSIC, action.payload)
     case actions.KEY_REPLAY:
-      return state.set(actions.KEY_REPLAY, !state.get(actions.KEY_REPLAY))
+      return state.set(actions.KEY_REPLAY, action.payload)
     case actions.KEY_SPEED:
-      return state.set(actions.KEY_SPEED, !state.get(actions.KEY_SPEED))
+      return state.set(actions.KEY_SPEED, action.payload)
     default:
       return state
   }

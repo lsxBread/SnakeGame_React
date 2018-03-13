@@ -1,0 +1,53 @@
+.numberDisplay {
+  margin-top: 20px;
+  p {
+    font-size: 20px;
+    padding: 20px 0 0;
+  }
+  .numbers {
+    height: 24px;
+    margin-top: 10px;
+    span {
+      float: right;
+      width: 14px;
+      height: 24px;
+      &.number {
+        background: url('../images/icon.png');
+        overflow: hidden;
+      };
+      &.null {
+        background-position: -215px -25px;
+      };
+      &.zero {
+        background-position: -75px -25px; 
+      }; 
+      &.one {
+        background-position: -89px -25px; 
+      };
+      &.two {
+        background-position: -103px -25px;  
+      };
+      &.three {
+        background-position: -117px -25px;   
+      };
+      &.four {
+        background-position: -131px -25px;   
+      }
+      &.five {
+        background-position: -145px -25px;   
+      };
+      &.six {
+        background-position: -159px -25px;   
+      };
+      &.seven {
+        background-position: -173px -25px;   
+      };
+      &.eight {
+        background-position: -187px -25px;   
+      };
+      &.nine {
+        background-position: -201px -25px;   
+      }
+    }
+  }
+}

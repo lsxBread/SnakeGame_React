@@ -1,0 +1,9 @@
+.music {
+  background: url('../images/icon.png');
+  width: 25px;
+  height: 21px;
+  background-position: -175px -75px;
+  &.active {
+    background-position: -150px -75px;
+  }
+}

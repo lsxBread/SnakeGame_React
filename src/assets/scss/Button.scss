@@ -1,6 +1,7 @@
 .buttonWrapper {
   position: absolute;
   .button {
+    touch-action: none;
     border: 1px solid black;
     border-radius: 50%;
     position: relative;

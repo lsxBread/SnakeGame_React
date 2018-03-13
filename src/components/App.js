@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BaseComponent from './base/Base'
 
 import Decorate from './decorate/Decorate'
 import Keyboard from './keyboard/Keyboard'
+import Number from './Number/Number'
+import Music from './Music/Music'
+import Pause from './Pause/Pause'
 import '../assets/css/App.css';
 
 class App extends BaseComponent {
@@ -56,7 +59,18 @@ class App extends BaseComponent {
           <div className="displayBoarder">
             <div className="screen">
               <div className="gameInfo">
-                
+                <Number numType='max' title='MAX'/>
+                <Number numType='score' title='SCORE'/>
+                <Number numType='speed' title='SPEED'/>
+                <div className="settingWrapper">
+                  <div className='setting' >
+                    <Music />
+                    <Pause />
+                  </div>
+                  <div className="time">
+
+                  </div>
+                </div>
               </div>
             </div>
           </div> 

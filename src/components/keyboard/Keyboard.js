@@ -1,5 +1,4 @@
 import React from 'react'
-import Immutable from 'immutable'
 
 import Button from './button/Button'
 import '../../assets/css/Keyboard.css'
