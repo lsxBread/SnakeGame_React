@@ -1,0 +1,76 @@
+.buttonWrapper {
+  position: absolute; }
+  .buttonWrapper .button {
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+    .buttonWrapper .button:before, .buttonWrapper .button:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      box-shadow: 0 5px 10px rgba(255, 255, 255, 0.8) inset; }
+    .buttonWrapper .button:after {
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.8) inset; }
+    .buttonWrapper .button.active:before {
+      box-shadow: 0 -3px 6px rgba(255, 255, 255, 0.6) inset; }
+    .buttonWrapper .button.active:after {
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6) inset; }
+    .buttonWrapper .button.big {
+      width: 160px;
+      height: 160px; }
+    .buttonWrapper .button.middle {
+      width: 100px;
+      height: 100px; }
+    .buttonWrapper .button.small {
+      width: 52px;
+      height: 52px; }
+    .buttonWrapper .button.green {
+      background: #2dc421; }
+    .buttonWrapper .button.red {
+      background: #dd1a1a; }
+    .buttonWrapper .button.blue {
+      background: #5a65f1; }
+    .buttonWrapper .button svg {
+      position: absolute; }
+      .buttonWrapper .button svg.bottom {
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%); }
+      .buttonWrapper .button svg.right {
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%); }
+    .buttonWrapper .button .upArrow {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      border: 8px solid;
+      border-color: transparent transparent #111;
+      transform: translateX(-50%) scale(1, 2); }
+    .buttonWrapper .button .leftArrow {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      border: 8px solid;
+      border-color: transparent #111 transparent transparent;
+      transform: translateY(-50%) scale(2, 1); }
+    .buttonWrapper .button .rightArrow {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      border: 8px solid;
+      border-color: transparent transparent transparent #111;
+      transform: translateY(-50%) scale(2, 1); }
+    .buttonWrapper .button .downArrow {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      border: 8px solid;
+      border-color: #111 transparent transparent transparent;
+      transform: translateX(-50%) scale(1, 2); }

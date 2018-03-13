@@ -1,0 +1,56 @@
+.decorate {
+  .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+    top: -12px;
+    font-size: 30px;
+  };
+  .topBorder {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      &.left-move {
+        float: left;
+        margin-right: 10px;
+      }
+      &.right-move {
+        float: right;
+        margin-left: 10px;
+      }
+    }
+  };
+  .leftDecorate {
+    position: absolute;
+    left: -60px;
+  }
+  .rightDecorate {
+    position: absolute;
+    right: -60px;
+  }
+  p {
+    width: 20px;
+    height: 20px; 
+  }
+  b {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    padding: 2px;
+    margin: 1px;
+    &:after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-color: black;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  background: #009688; }
+  #root .App {
+    width: 640px;
+    padding-top: 42px;
+    box-shadow: 0 0 10px #fff inset;
+    border-radius: 20px;
+    background: #efcc19;
+    margin: 0 auto; }
+    #root .App .gameDisplay {
+      width: 480px;
+      padding: 45px 0 35px;
+      border: solid #000;
+      border-width: 0 10px 10px 10px;
+      margin: 0 auto;
+      position: relative; }
+      #root .App .gameDisplay .displayBoarder {
+        width: 390px;
+        height: 478px;
+        border: 5px solid;
+        border-color: #987f0f #fae36c #fae36c #987f0f;
+        margin: 0 auto;
+        position: relative; }
+        #root .App .gameDisplay .displayBoarder .screen {
+          width: 380px;
+          height: 468px;
+          margin: 0 auto;
+          background: #9ead86;
+          padding: 8px;
+          border: 2px solid #494536; }
+    #root .App .operation {
+      width: 580px;
+      height: 330px;
+      margin: 20px auto 0;
+      position: relative; }
