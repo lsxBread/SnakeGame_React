@@ -14,7 +14,6 @@ class Number extends React.Component {
     }
   }
   render() {
-    console.log('render')
     let number = this.props[this.props.numType]
     let classList = numberToClass(number)
     return (

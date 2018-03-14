@@ -14,7 +14,6 @@ class Pause extends React.Component {
   }
   render() {
     let active = this.props.pause
-    console.log('render')
     return (
         <div className={cn('pause',{'active': active})}></div>
     )

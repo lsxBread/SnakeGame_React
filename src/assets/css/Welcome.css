@@ -1,0 +1,29 @@
+.welcome {
+  width: 224px;
+  height: 200px;
+  position: absolute;
+  top: 100px;
+  left: 12px;
+  text-align: center;
+  padding: 20px 0; }
+  .welcome p {
+    font-family: 'Times New Roman';
+    margin-top: 20px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.35); }
+  .welcome .logo {
+    width: 80px;
+    height: 86px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: url("../images/icon.png");
+    background-position: 0 -100px; }
+    .welcome .logo.r1, .welcome .logo.l1 {
+      background-position: 0 -100px; }
+    .welcome .logo.r2, .welcome .logo.l2 {
+      background-position: -100px -100px; }
+    .welcome .logo.r3, .welcome .logo.l3 {
+      background-position: -200px -100px; }
+    .welcome .logo.r4, .welcome .logo.l4 {
+      background-position: -300px -100px; }
+    .welcome .logo.l1, .welcome .logo.l2, .welcome .logo.l3, .welcome .logo.l4 {
+      transform: scale(-1, 1); }

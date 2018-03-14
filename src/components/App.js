@@ -2,6 +2,7 @@ import React from 'react';
 import BaseComponent from './base/Base'
 
 import Decorate from './decorate/Decorate'
+import Welcome from './Welcome/Welcome'
 import Keyboard from './keyboard/Keyboard'
 import Number from './Number/Number'
 import Music from './Music/Music'
@@ -51,13 +52,13 @@ class App extends BaseComponent {
       css['transformOrigin'] = `top ${position}`
       return css;
     })();
-
     return (
       <div className='App' style={size}>
         <div className="gameDisplay">
           <Decorate/>
           <div className="displayBoarder">
             <div className="screen">
+              <Welcome />
               <div className="gameInfo">
                 <Number numType='max' title='MAX'/>
                 <Number numType='score' title='SCORE'/>
@@ -68,7 +69,6 @@ class App extends BaseComponent {
                     <Pause />
                   </div>
                   <div className="time">
-
                   </div>
                 </div>
               </div>

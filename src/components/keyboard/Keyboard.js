@@ -42,7 +42,7 @@ export default class Keyboard extends React.Component {
           label='play'
           top='120px'
           left='50px'
-          type={actions.KEY_SPEED}
+          type={actions.KEY_START}
         />
         <Button
           color='blue'

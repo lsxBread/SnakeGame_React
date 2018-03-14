@@ -14,7 +14,6 @@ class Music extends React.Component {
   }
   render() {
     let active = this.props.music
-    console.log('render')
     return (
         <div className={cn('music',{'active': active})}></div>
     )
