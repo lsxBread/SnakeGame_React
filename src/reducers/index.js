@@ -6,9 +6,10 @@ import max from './max/index'
 import speed from './speed/index'
 import music from './music/index'
 import pause from './pause/index'
+import food from './food/index'
 
 const rootReducer = combineReducers({
-  game, score, max, speed, keyboard, music, pause,
+  game, score, max, speed, keyboard, music, pause, food
 })
 
 export default rootReducer

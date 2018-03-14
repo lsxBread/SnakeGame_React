@@ -1,8 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import cn from 'classnames'
 
-import { gameState } from '../../unit/const'
 import '../../assets/css/Welcome.css'
 
 class Welcome extends React.Component {
@@ -20,22 +18,8 @@ class Welcome extends React.Component {
     this.animate()
   }
 
-  shouldComponentUpdate({game}) {
-    if (game === gameState.pause) {
-      return false
-    } else {
-      return true
-    }
-    // return game === gameState.pause ? false : true
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.game === gameState.start) {
-      clearTimeout(Welcome.timeout)
-    }
-    if (nextProps.game === gameState.welcome) {
-      this.animate()
-    }
+  componentWillUnmount() {
+    clearTimeout(Welcome.timeout)
   }
 
   animate() {
@@ -49,7 +33,7 @@ class Welcome extends React.Component {
             display: 'block',
             classname: m + 1
           });
-          if(next) {
+          if (next) {
             next()
           }
         },
@@ -62,7 +46,7 @@ class Welcome extends React.Component {
           this.setState({
             display: 'none'
           });
-          if(next) {
+          if (next) {
             next()
           }
         },
@@ -75,7 +59,7 @@ class Welcome extends React.Component {
         this.setState({ classname: m + 4 })
         Welcome.timeout = setTimeout(() => {
           this.setState({ classname: m + 3 })
-          count ++
+          count++
           if (count === 10 || count === 20 || count === 30) {
             m = m === 'r' ? 'l' : 'r';
           }
@@ -89,7 +73,7 @@ class Welcome extends React.Component {
         }, 100)
       }, 100)
     };
-    
+
     const recycle = () => {
       showLogo(() => {
         hideLogo(() => {
@@ -108,20 +92,12 @@ class Welcome extends React.Component {
 
   render() {
     return (
-      this.props.game === gameState.welcome
-      ? <div className='welcome' style={{display: this.state.display}}>
-          <div className={cn({'logo':true, [`${this.state.classname}`]:true})} ></div>
-          <p>Welcome to Snake</p>
-        </div>
-      : null
+      <div className='welcome' style={{ display: this.state.display }}>
+        <div className={cn({ 'logo': true, [`${this.state.classname}`]: true })} ></div>
+        <p>Welcome to Snake</p>
+      </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    game: state.get('game')
-  }
-}
-
-export default connect(mapStateToProps, null)(Welcome)
+export default Welcome

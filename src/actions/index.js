@@ -67,3 +67,9 @@ export const deactivePause = () => {
     type: actions.DEACTIVE_PAUSE
   } 
 }
+
+export const createFood = () => {
+  return {
+    type: actions.CREATE_FOOD
+  }
+}

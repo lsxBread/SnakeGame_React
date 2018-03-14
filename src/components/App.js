@@ -1,5 +1,6 @@
 import React from 'react';
 import BaseComponent from './base/Base'
+import { connect } from 'react-redux'
 
 import Decorate from './decorate/Decorate'
 import Welcome from './Welcome/Welcome'
@@ -7,6 +8,9 @@ import Keyboard from './keyboard/Keyboard'
 import Number from './Number/Number'
 import Music from './Music/Music'
 import Pause from './Pause/Pause'
+import Matrix from './Matrix/Matrix'
+import Food from './Food/Food'
+import { gameState } from '../unit/const'
 import '../assets/css/App.css';
 
 class App extends BaseComponent {
@@ -29,6 +33,7 @@ class App extends BaseComponent {
     })
   }
   render() {
+    console.log('render')
     let filling = 0;
     const size = (() => {
       const w = this.state.w
@@ -53,12 +58,24 @@ class App extends BaseComponent {
       return css;
     })();
     return (
+     
       <div className='App' style={size}>
         <div className="gameDisplay">
           <Decorate/>
           <div className="displayBoarder">
             <div className="screen">
-              <Welcome />
+              {
+                this.props.game === gameState.welcome //Only the welcome logo will be unmounted
+                ? <Welcome />
+                : null
+              }
+              <Matrix />
+              {
+                this.props.game === gameState.start
+                ?  <Food />
+                : null
+              }
+             
               <div className="gameInfo">
                 <Number numType='max' title='MAX'/>
                 <Number numType='score' title='SCORE'/>
@@ -83,4 +100,10 @@ class App extends BaseComponent {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    game: state.get('game')
+  }
+}
+
+export default connect(mapStateToProps, null)(App)

@@ -1,0 +1,22 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.matrix {
+  border: 2px solid black;
+  padding: 3px 1px 1px 3px;
+  width: 228px; }
+  .matrix .cell {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border: 2px solid #879372;
+    margin: 0 2px 2px 0;
+    float: left; }
+    .matrix .cell:after {
+      display: block;
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #879372; }
