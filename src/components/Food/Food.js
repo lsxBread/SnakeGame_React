@@ -6,68 +6,68 @@ import '../../assets/css/Food.css'
 
 class Food extends React.Component {
 
-  constructor() {
-    super()
-    this.state = {
-      display: 'none',
-    }
-    this.animate = this.animate.bind(this)
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     display: 'none',
+  //   }
+  //   this.animate = this.animate.bind(this)
+  // }
 
-  componentWillMount() {
-    this.animate()
-  }
+  // componentWillMount() {
+  //   this.animate()
+  // }
 
-  componentWillUnmount() {
-    clearTimeout(Food.timeout)
-  }
+  // componentWillUnmount() {
+  //   clearTimeout(Food.timeout)
+  // }
 
-  animate() {
-    clearTimeout(Food.timeout)
-    const showFood = (next, delay) => {
-      Food.timeout = setTimeout(
-        () => {
-          this.setState({
-            display: 'block',
-          });
-          if (next) {
-            next()
-          }
-        },
-        delay
-      )
-    }
-    const hideFood = (next, delay) => {
-      Food.timeout = setTimeout(
-        () => {
-          this.setState({
-            display: 'none'
-          });
-          if (next) {
-            next()
-          }
-        },
-        delay
-      )
-    }
-    const recycle = () => {
-      showFood(() => {
-        hideFood(() => {
-          recycle()
-        }, 300)
-      }, 300)
-    }
-    recycle()
-  }
+  // animate() {
+  //   clearTimeout(Food.timeout)
+  //   const showFood = (next, delay) => {
+  //     Food.timeout = setTimeout(
+  //       () => {
+  //         this.setState({
+  //           display: 'block',
+  //         });
+  //         if (next) {
+  //           next()
+  //         }
+  //       },
+  //       delay
+  //     )
+  //   }
+  //   const hideFood = (next, delay) => {
+  //     Food.timeout = setTimeout(
+  //       () => {
+  //         this.setState({
+  //           display: 'none'
+  //         });
+  //         if (next) {
+  //           next()
+  //         }
+  //       },
+  //       delay
+  //     )
+  //   }
+  //   const recycle = () => {
+  //     showFood(() => {
+  //       hideFood(() => {
+  //         recycle()
+  //       }, 300)
+  //     }, 300)
+  //   }
+  //   recycle()
+  // }
 
   render() {
     return (
       <div 
         className="food" 
         style={{ 
-          display: this.state.display,
-          left: this.props.left,
-          top: this.props.top,
+          // display: this.state.display,
+          left: this.props.left + 'px',
+          top: this.props.top + 'px',
         }}
       ></div>
     )

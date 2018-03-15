@@ -50,6 +50,12 @@ export const replayGame = () => {
   }
 }
 
+export const gameover = () => {
+  return {
+    type: actions.GAME_OVER
+  }
+}
+
 export const switchMusic = () => {
   return {
     type: actions.SWITCH_MUSIC
@@ -71,5 +77,62 @@ export const deactivePause = () => {
 export const createFood = () => {
   return {
     type: actions.CREATE_FOOD
+  }
+}
+
+export const createSnake = () => {
+  return {
+    type: actions.CREATE_SNAKE
+  }
+}
+
+export const moveSnake = (newPos) => {
+  return {
+    type: actions.MOVE_SNAKE,
+    payload: newPos
+  }
+}
+
+export const changeDirection = (dir) => {
+  return {
+    type: actions.CHANGE_DIRECTION,
+    payload: dir,
+  }
+}
+
+export const addScore = () => {
+  return {
+    type: actions.ADD_SCORE
+  }
+}
+
+export const resetScore = (dir) => {
+  return {
+    type: actions.RESET_SCORE
+  }
+}
+
+export const resetFood = (dir) => {
+  return {
+    type: actions.RESET_FOOD
+  }
+}
+
+export const resetSnake = (dir) => {
+  return {
+    type: actions.RESET_SNAKE
+  }
+}
+
+export const resetDirection = (dir) => {
+  return {
+    type: actions.RESET_DIRECTION
+  }
+}
+
+export const updateMax = (score) => {
+  return {
+    type: actions.UPDATE_MAX,
+    payload: score
   }
 }

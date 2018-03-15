@@ -94,7 +94,7 @@ class Welcome extends React.Component {
     return (
       <div className='welcome' style={{ display: this.state.display }}>
         <div className={cn({ 'logo': true, [`${this.state.classname}`]: true })} ></div>
-        <p>Welcome to Snake</p>
+        <p>{this.props.title}</p>
       </div>
     )
   }

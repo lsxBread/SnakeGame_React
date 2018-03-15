@@ -10,6 +10,7 @@ import Music from './Music/Music'
 import Pause from './Pause/Pause'
 import Matrix from './Matrix/Matrix'
 import Food from './Food/Food'
+import Snake from './Snake/Snake'
 import { gameState } from '../unit/const'
 import '../assets/css/App.css';
 
@@ -33,8 +34,14 @@ class App extends BaseComponent {
     })
   }
   render() {
-    console.log('render')
-    let filling = 0;
+    let title = ''
+    if (this.props.game === gameState.welcome) {
+      title = 'Welcome to SNAKE'
+    } else {
+      title = 'GAME OVER'
+    }
+    
+    let filling = 0
     const size = (() => {
       const w = this.state.w
       const h = this.state.h
@@ -58,24 +65,27 @@ class App extends BaseComponent {
       return css;
     })();
     return (
-     
       <div className='App' style={size}>
         <div className="gameDisplay">
           <Decorate/>
           <div className="displayBoarder">
             <div className="screen">
               {
-                this.props.game === gameState.welcome //Only the welcome logo will be unmounted
-                ? <Welcome />
+                this.props.game === gameState.welcome ||  this.props.game === gameState.gameover //Only the welcome logo will be unmounted
+                ? <Welcome title={title}/>
                 : null
               }
               <Matrix />
               {
-                this.props.game === gameState.start
+                this.props.game === gameState.start || this.props.game === gameState.pause
                 ?  <Food />
                 : null
               }
-             
+              {
+                this.props.game === gameState.start || this.props.game === gameState.pause
+                ?  <Snake />
+                : null
+              }
               <div className="gameInfo">
                 <Number numType='max' title='MAX'/>
                 <Number numType='score' title='SCORE'/>

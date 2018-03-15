@@ -11,6 +11,8 @@ const game = (state = initState, action) => {
       return gameState.pause
     case actions.REPLAY_GAME:
       return gameState.welcome
+    case actions.GAME_OVER:
+      return gameState.gameover
     default:
       return state
   }

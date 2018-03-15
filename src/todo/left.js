@@ -1,9 +1,11 @@
+import { changeDirection } from '../actions/index'
 import store from '../store/index'
 import { gameState } from '../unit/const'
 
 const left = () => {
-  if (store.getState().get('game') === gameState.start) {
-    store.dispatch  
+  if (store.getState().get('game') === gameState.start
+      && store.getState().get('direction') !== 'right') {
+    store.dispatch(changeDirection('left'))  
   }
 }
 
