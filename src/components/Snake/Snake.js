@@ -13,16 +13,19 @@ class Snake extends React.Component {
   }
 
   componentDidMount() {
-    this.moveSnake()
+    if (this.props.game === gameState.start) {
+      this.moveSnake()
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(Snake.interval)
+    // clearInterval(Snake.interval)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.game === gameState.pause) {
       clearInterval(Snake.interval)
+      
     }
 
     if (nextProps.game === gameState.start) {

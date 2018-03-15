@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore } from 'redux'
 import rootReducers from '../reducers/index'
 import {loadState, saveState} from '../unit/localstorage'
 

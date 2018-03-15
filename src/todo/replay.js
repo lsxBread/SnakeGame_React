@@ -7,7 +7,6 @@ import { deactivePause,
          resetDirection 
         } from '../actions/index'
 import store from '../store/index'
-import { gameState } from '../unit/const'
 
 const replay = () => {
   store.dispatch(resetSpeed(1))
