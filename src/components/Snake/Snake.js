@@ -19,43 +19,45 @@ class Snake extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(Snake.interval) 
+    clearTimeout(Snake.timeout) 
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.game === gameState.pause) {
-      clearInterval(Snake.interval)
+      clearTimeout(Snake.timeout)
     }
 
-    if (nextProps.game === gameState.start) {
+    if (nextProps.game === gameState.start && this.props.game !== gameState.start) {
       this.moveSnake()
     }
   }
 
   moveSnake() {
-    clearInterval(Snake.interval)
+    clearTimeout(Snake.timeout)
     let snakeHead, newSnakeHead, newSnakeCells
-
-    Snake.interval = setInterval(() => {
-      snakeHead = this.props.snakeCells.get(0)
-      newSnakeHead = updateHead(snakeHead)
-      if (this.props.snakeCells.includes(newSnakeHead)) {
-        this.props.gameover()
-        if(this.props.score > this.props.max) {
-          this.props.updateMax(this.props.score)
+    const run = () => {
+      Snake.timeout = setTimeout(() => {
+        snakeHead = this.props.snakeCells.get(0)
+        newSnakeHead = updateHead(snakeHead)
+        if (this.props.snakeCells.includes(newSnakeHead)) {
+          this.props.gameover()
+          if(this.props.score > this.props.max) {
+            this.props.updateMax(this.props.score)
+          }
         }
-      }
-      if (is(newSnakeHead, this.props.food)) {
-        newSnakeCells = this.props.snakeCells.unshift(newSnakeHead)
-        this.props.addScore()
-        this.props.createFood()
-      } else {
-        newSnakeCells = this.props.snakeCells
-          .pop()
-          .unshift(newSnakeHead)
-      }
-      this.props.moveSnake(newSnakeCells)
-    }, 300 / this.props.speed)
+        if (is(newSnakeHead, this.props.food)) {
+          newSnakeCells = this.props.snakeCells.unshift(newSnakeHead)
+          this.props.addScore()
+          this.props.createFood()
+        } else {
+          newSnakeCells = this.props.snakeCells
+            .pop()
+            .unshift(newSnakeHead)
+        }
+        this.props.moveSnake(newSnakeCells)
+        run()
+      }, 300 / this.props.speed)
+    }
 
     const updateHead = (head) => {
       let left = head.get('left')
@@ -73,10 +75,10 @@ class Snake extends React.Component {
           return null
       }
     }
+    run()
   }
 
   render() {
-    console.log('move snake')
     return (
       <div>
         {this.props.snakeCells.map((cell) => {
