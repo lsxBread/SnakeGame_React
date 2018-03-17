@@ -19,7 +19,7 @@ class Snake extends React.Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(Snake.timeout) 
+    clearTimeout(Snake.timeout)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,14 +33,16 @@ class Snake extends React.Component {
   }
 
   moveSnake() {
-    clearTimeout(Snake.timeout)
     let snakeHead, newSnakeHead, newSnakeCells
+    let stop = false
     const run = () => {
       Snake.timeout = setTimeout(() => {
+        console.log('move snake')
         snakeHead = this.props.snakeCells.get(0)
         newSnakeHead = updateHead(snakeHead)
         if (this.props.snakeCells.includes(newSnakeHead)) {
           this.props.gameover()
+          stop = true
           if(this.props.score > this.props.max) {
             this.props.updateMax(this.props.score)
           }
@@ -55,7 +57,9 @@ class Snake extends React.Component {
             .unshift(newSnakeHead)
         }
         this.props.moveSnake(newSnakeCells)
-        run()
+        if (!stop) {
+          run()
+        }
       }, 300 / this.props.speed)
     }
 
