@@ -1,38 +1,22 @@
-import * as actions from '../../unit/actionType'
-import immutable from 'immutable'
+import { combineReducers } from 'redux-immutable';
+import start from './start';
+import down from './down';
+import left from './left';
+import right from './right';
+import up from './up';
+import replay from './replay';
+import music from './music';
+import pause from './pause';
 
-const $initState = immutable.Map({
-  [actions.KEY_UP]: false,
-  [actions.KEY_DOWN]: false,
-  [actions.KEY_LEFT]: false,
-  [actions.KEY_RIGHT]: false,
-  [actions.KEY_START]: false,
-  [actions.KEY_PAUSE]: false,
-  [actions.KEY_MUSIC]: false,
-  [actions.KEY_REPLAY]: false,
-})
+const keyboard = combineReducers({
+  start,
+  down,
+  left,
+  right,
+  up,
+  replay,
+  music,
+  pause,
+});
 
-const keyboard = (state = $initState, action) => {
-  switch (action.type) {
-    case actions.KEY_UP:
-      return state.set(actions.KEY_UP, action.payload)
-    case actions.KEY_LEFT:
-      return state.set(actions.KEY_LEFT, action.payload)
-    case actions.KEY_RIGHT:
-      return state.set(actions.KEY_RIGHT, action.payload)
-    case actions.KEY_DOWN:
-      return state.set(actions.KEY_DOWN, action.payload)
-    case actions.KEY_PAUSE:
-      return state.set(actions.KEY_PAUSE, action.payload)
-    case actions.KEY_MUSIC:
-      return state.set(actions.KEY_MUSIC, action.payload)
-    case actions.KEY_REPLAY:
-      return state.set(actions.KEY_REPLAY, action.payload)
-    case actions.KEY_START:
-      return state.set(actions.KEY_START, action.payload)
-    default:
-      return state
-  }
-}
-
-export default keyboard
+export default keyboard;

@@ -71,20 +71,17 @@ class App extends BaseComponent {
           <div className="displayBoarder">
             <div className="screen">
               {
-                this.props.game === gameState.welcome ||  this.props.game === gameState.gameover //Only the welcome logo will be unmounted
-                ? <Welcome title={title}/>
-                : null
+                (this.props.game === gameState.welcome ||  this.props.game === gameState.gameover)
+                &&<Welcome title={title}/>
               }
               <Matrix />
               {
-                this.props.game === gameState.start || this.props.game === gameState.pause
-                ?  <Food />
-                : null
+                (this.props.game === gameState.start || this.props.game === gameState.pause)
+                &&<Food />
               }
               {
-                this.props.game === gameState.start || this.props.game === gameState.pause
-                ?  <Snake />
-                : null
+                (this.props.game === gameState.start || this.props.game === gameState.pause)
+                &&<Snake />
               }
               <div className="gameInfo">
                 <Number numType='max' title='MAX'/>

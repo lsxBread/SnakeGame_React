@@ -19,13 +19,12 @@ class Snake extends React.Component {
   }
 
   componentWillUnmount() {
-    // clearInterval(Snake.interval)
+    clearInterval(Snake.interval) 
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.game === gameState.pause) {
       clearInterval(Snake.interval)
-      
     }
 
     if (nextProps.game === gameState.start) {
@@ -77,6 +76,7 @@ class Snake extends React.Component {
   }
 
   render() {
+    console.log('move snake')
     return (
       <div>
         {this.props.snakeCells.map((cell) => {

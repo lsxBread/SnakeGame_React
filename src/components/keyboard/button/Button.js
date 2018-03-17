@@ -18,15 +18,17 @@ class Button extends React.Component {
 
   handleMouseDown(e, btnType) {
     this.props.buttonDown(btnType)
+    console.log('press'+performance.now())
     todo[btnType].call()
   }
 
   handleMouseUp(e, btnType) {
-    this.props.buttonUp(btnType)
+    this.props.buttonUp(btnType) 
   }
   
   handleTouchStart(e, btnType) {
     e.preventDefault();
+    console.log('press'+performance.now())
     this.props.buttonDown(btnType)
     todo[btnType].call()
   }
