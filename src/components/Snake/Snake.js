@@ -37,7 +37,6 @@ class Snake extends React.Component {
     let stop = false
     const run = () => {
       Snake.timeout = setTimeout(() => {
-        console.log('move snake')
         snakeHead = this.props.snakeCells.get(0)
         newSnakeHead = updateHead(snakeHead)
         if (this.props.snakeCells.includes(newSnakeHead)) {
