@@ -1,14 +1,68 @@
 #root {
   width: 100%;
   height: 100vh;
-  background: #009688; }
+  background: #009688;
+  overflow: hidden; }
   #root .App {
     width: 640px;
     padding-top: 42px;
     box-shadow: 0 0 10px #fff inset;
     border-radius: 20px;
     background: #efcc19;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
+    #root .App .key_space {
+      margin: 10px;
+      background: #364d4b;
+      color: #acc3c1;
+      text-align: center;
+      font-size: 16px;
+      padding: 20px 0;
+      width: 300px;
+      position: absolute;
+      bottom: 5%;
+      left: -55%;
+      border-radius: 4px; }
+      #root .App .key_space:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.15); }
+    #root .App .key_arrows {
+      position: absolute;
+      bottom: 5%;
+      right: -60%;
+      white-space: nowrap; }
+      #root .App .key_arrows .top {
+        margin: 10px auto; }
+      #root .App .key_arrows .bottom {
+        display: inline-block;
+        margin: 10px;
+        position: relative; }
+      #root .App .key_arrows .top, #root .App .key_arrows .bottom {
+        background: #364d4b;
+        color: #acc3c1;
+        text-align: center;
+        font-size: 16px;
+        padding: 20px 0;
+        width: 100px;
+        border-radius: 4px;
+        position: relative; }
+        #root .App .key_arrows .top:after, #root .App .key_arrows .bottom:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4px;
+          box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.15); }
     #root .App .gameDisplay {
       width: 480px;
       padding: 45px 0 35px;

@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   background: #009688;
+  overflow: hidden;
   .App {
     width: 640px;
     padding-top: 42px;
@@ -9,6 +10,66 @@
     border-radius: 20px;
     background: #efcc19;
     margin: 0 auto;
+    position: relative;
+    .key_space {
+      margin: 10px;
+      background: #364d4b;
+      color: #acc3c1;
+      text-align: center;
+      font-size: 16px;
+      padding: 20px 0;
+      width: 300px;
+      position: absolute;
+      bottom: 5%;
+      left: -55%;
+      border-radius: 4px;
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        box-shadow: inset 0 5px 10px hsla(0,0%,100%,.15);
+      }
+    }
+    .key_arrows {
+      position: absolute;
+      bottom: 5%;
+      right: -60%;
+      white-space: nowrap;
+      .top {
+        margin: 10px auto;
+      }
+      .bottom {
+        display: inline-block;
+        margin: 10px;
+        position: relative;
+      }
+      .top, .bottom {
+        background: #364d4b;
+        color: #acc3c1;
+        text-align: center;
+        font-size: 16px;
+        padding: 20px 0;
+        width: 100px;
+        border-radius: 4px;
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4px;
+          box-shadow: inset 0 5px 10px hsla(0,0%,100%,.15);
+        }
+      }
+    }
     .gameDisplay {
       width: 480px;
       padding: 45px 0 35px;
