@@ -99,7 +99,7 @@ class App extends BaseComponent {
     if (this.props.game === gameState.welcome) {
       title = 'Welcome to SNAKE'
     } else {
-      title = 'GAME OVER'
+      title = 'GAME OVER! RESTART!'
     }
 
     let filling = 0
